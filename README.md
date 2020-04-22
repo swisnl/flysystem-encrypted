@@ -21,8 +21,22 @@ $ composer require swisnl/flysystem-encrypted
 ## Usage
 
 ``` php
-$skeleton = new Swis\Flysystem\Encrypted();
-echo $skeleton->echoPhrase('Hello, League!');
+use Illuminate\Encryption\Encrypter;
+use League\Flysystem\Filesystem;
+use League\Flysystem\Adapter\Local;
+use Swis\Flysystem\Encrypted\EncryptedAdapter;
+
+// Create the adapter
+$localAdapter = new Local('/path/to/root');
+
+// Create the encrypter
+$encrypter = new Encrypter('key', 'cipher');
+
+// Decorate the adapter
+$adapter = new EncryptedAdapter($localAdapter, $encrypter);
+
+// And use that to create the file system
+$filesystem = new Filesystem($adapter);
 ```
 
 ## Change log
