@@ -148,6 +148,11 @@ class EncryptedAdapter implements AdapterInterface
         }
 
         $stream = tmpfile();
+
+        if ($stream === false) {
+            return false;
+        }
+
         fwrite($stream, $result['contents']);
         fseek($stream, 0);
         unset($result['contents']);
