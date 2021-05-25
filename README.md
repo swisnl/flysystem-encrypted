@@ -39,6 +39,11 @@ $adapter = new EncryptedAdapter($localAdapter, $encrypter);
 $filesystem = new Filesystem($adapter);
 ```
 
+## Known limitations
+
+1. Encrypted data is — depending on what you encrypt — roughly 30-40% bigger.
+2. You can use streams with this adapter, but internally they will always be converted to a string because the entire file contents need to be encrypted/decrypted at once. This requires quite some memory, so this adapter is not recommended for large files.
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
