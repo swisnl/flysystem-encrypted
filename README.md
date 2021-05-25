@@ -1,4 +1,4 @@
-# Flysystem Encrypted EncryptedAdapter
+# Flysystem Encrypted Filesystem Adapter
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -8,7 +8,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Made by SWIS][ico-swis]][link-swis]
 
-The adapter decorator encrypts files.
+This Flysystem adapter is a transparent decorator that encrypts/decrypts files using the [Illuminate Encrypter](https://packagist.org/packages/illuminate/encryption).
 
 ## Install
 
@@ -18,13 +18,15 @@ Via Composer
 $ composer require swisnl/flysystem-encrypted
 ```
 
+N.B. Using Flysystem 1? Please use version [1.x](https://github.com/swisnl/flysystem-encrypted/tree/1.x) of this adapter.
+
 ## Usage
 
 ``` php
 use Illuminate\Encryption\Encrypter;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local;
-use Swis\Flysystem\Encrypted\EncryptedAdapter;
+use Swis\Flysystem\Encrypted\EncryptedFilesystemAdapter;
 
 // Create the adapter
 $localAdapter = new Local('/path/to/root');
@@ -33,7 +35,7 @@ $localAdapter = new Local('/path/to/root');
 $encrypter = new Encrypter('key', 'cipher');
 
 // Decorate the adapter
-$adapter = new EncryptedAdapter($localAdapter, $encrypter);
+$adapter = new EncryptedFilesystemAdapter($localAdapter, $encrypter);
 
 // And use that to create the file system
 $filesystem = new Filesystem($adapter);

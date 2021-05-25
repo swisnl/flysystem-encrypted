@@ -4,19 +4,13 @@ All notable changes to `flysystem-encrypted` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+## Unreleased
 
 ### Added
-- Nothing
+- Flysystem 2 support.
 
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
+### Changed
+- Renamed `Swis\Flysystem\Encrypted\EncryptedAdapter` to `Swis\Flysystem\Encrypted\EncryptedFilesystemAdapter`.
 
 ### Removed
-- Nothing
-
-### Security
-- Nothing
+- Flysystem 1 support.
