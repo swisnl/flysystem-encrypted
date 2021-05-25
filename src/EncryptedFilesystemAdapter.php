@@ -41,8 +41,11 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
      * @param \Illuminate\Contracts\Encryption\Encrypter $encrypter
      * @param \League\MimeTypeDetection\MimeTypeDetector|null $mimeTypeDetector
      */
-    public function __construct(FilesystemAdapter $adapter, Encrypter $encrypter, MimeTypeDetector $mimeTypeDetector = null)
-    {
+    public function __construct(
+        FilesystemAdapter $adapter,
+        Encrypter $encrypter,
+        MimeTypeDetector $mimeTypeDetector = null
+    ) {
         $this->adapter = $adapter;
         $this->encrypter = $encrypter;
         $this->mimeTypeDetector = $mimeTypeDetector ?: new ExtensionMimeTypeDetector();
