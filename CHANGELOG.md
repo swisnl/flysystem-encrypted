@@ -14,3 +14,8 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Removed
 - Flysystem 1 support.
+
+## [1.0.1] - 2021-05-25
+
+### Added
+- Added support for PHP 8.
