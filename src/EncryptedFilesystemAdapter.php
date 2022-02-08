@@ -62,6 +62,14 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     /**
      * @inheritDoc
      */
+    public function directoryExists(string $path): bool
+    {
+        return $this->adapter->directoryExists($path);
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function write(string $path, string $contents, Config $config): void
     {
         try {
