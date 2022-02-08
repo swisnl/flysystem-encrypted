@@ -8,6 +8,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - Flysystem 2 and 3 support.
+- Laravel 9 support.
 
 ### Changed
 - Renamed `Swis\Flysystem\Encrypted\EncryptedAdapter` to `Swis\Flysystem\Encrypted\EncryptedFilesystemAdapter`.
