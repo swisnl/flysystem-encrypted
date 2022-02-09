@@ -6,6 +6,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [Unreleased]
 
+- Nothing
+
+## [2.0.0] - 2022-02-09
+
 ### Added
 - Flysystem 2 and 3 support.
 - Laravel 9 support.
