@@ -6,6 +6,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [Unreleased]
 
+- Nothing.
+
+## [2.1.0] - 2023-02-16
+
 ### Added
 
 - Added support for Laravel 10.
