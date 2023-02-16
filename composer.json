@@ -28,7 +28,7 @@
     "require-dev": {
         "league/flysystem-adapter-test-utilities": "^2.0|^3.0",
         "league/flysystem-memory": "^2.0|^3.0",
-        "phpunit/phpunit": ">=8.0",
+        "phpunit/phpunit": "^9.5",
         "squizlabs/php_codesniffer": "^3.0"
     },
     "autoload": {
