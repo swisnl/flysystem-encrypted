@@ -8,9 +8,9 @@ use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Contracts\Encryption\EncryptException;
 use Illuminate\Support\Traits\ForwardsCalls;
+use League\Flysystem\Config;
 use League\Flysystem\FileAttributes;
 use League\Flysystem\FilesystemAdapter;
-use League\Flysystem\Config;
 use League\Flysystem\UnableToReadFile;
 use League\Flysystem\UnableToRetrieveMetadata;
 use League\Flysystem\UnableToWriteFile;
@@ -37,8 +37,8 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     private $mimeTypeDetector;
 
     /**
-     * @param \League\Flysystem\FilesystemAdapter $adapter
-     * @param \Illuminate\Contracts\Encryption\Encrypter $encrypter
+     * @param \League\Flysystem\FilesystemAdapter             $adapter
+     * @param \Illuminate\Contracts\Encryption\Encrypter      $encrypter
      * @param \League\MimeTypeDetection\MimeTypeDetector|null $mimeTypeDetector
      */
     public function __construct(
@@ -52,7 +52,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function fileExists(string $path): bool
     {
@@ -60,7 +60,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function directoryExists(string $path): bool
     {
@@ -68,7 +68,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function write(string $path, string $contents, Config $config): void
     {
@@ -80,7 +80,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function writeStream(string $path, $contents, Config $config): void
     {
@@ -88,7 +88,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function read(string $path): string
     {
@@ -100,7 +100,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function readStream(string $path)
     {
@@ -117,7 +117,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function delete(string $path): void
     {
@@ -125,7 +125,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function deleteDirectory(string $path): void
     {
@@ -133,7 +133,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function createDirectory(string $path, Config $config): void
     {
@@ -141,7 +141,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function setVisibility(string $path, string $visibility): void
     {
@@ -149,7 +149,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function visibility(string $path): FileAttributes
     {
@@ -157,7 +157,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function mimeType(string $path): FileAttributes
     {
@@ -175,7 +175,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function lastModified(string $path): FileAttributes
     {
@@ -183,7 +183,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function fileSize(string $path): FileAttributes
     {
@@ -195,7 +195,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function listContents(string $path, bool $deep): iterable
     {
@@ -203,7 +203,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function move(string $source, string $destination, Config $config): void
     {
@@ -211,7 +211,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function copy(string $source, string $destination, Config $config): void
     {
@@ -222,7 +222,7 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
      * Dynamically pass missing methods to the decorated adapter.
      *
      * @param string $method
-     * @param array $parameters
+     * @param array  $parameters
      *
      * @return mixed
      */
