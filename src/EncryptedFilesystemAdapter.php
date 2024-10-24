@@ -22,29 +22,29 @@ class EncryptedFilesystemAdapter implements FilesystemAdapter
     use ForwardsCalls;
 
     /**
-     * @var \League\Flysystem\FilesystemAdapter
+     * @var FilesystemAdapter
      */
     private $adapter;
 
     /**
-     * @var \Illuminate\Contracts\Encryption\Encrypter
+     * @var Encrypter
      */
     private $encrypter;
 
     /**
-     * @var \League\MimeTypeDetection\MimeTypeDetector
+     * @var MimeTypeDetector
      */
     private $mimeTypeDetector;
 
     /**
-     * @param \League\Flysystem\FilesystemAdapter             $adapter
-     * @param \Illuminate\Contracts\Encryption\Encrypter      $encrypter
-     * @param \League\MimeTypeDetection\MimeTypeDetector|null $mimeTypeDetector
+     * @param FilesystemAdapter     $adapter
+     * @param Encrypter             $encrypter
+     * @param MimeTypeDetector|null $mimeTypeDetector
      */
     public function __construct(
         FilesystemAdapter $adapter,
         Encrypter $encrypter,
-        MimeTypeDetector $mimeTypeDetector = null
+        ?MimeTypeDetector $mimeTypeDetector = null,
     ) {
         $this->adapter = $adapter;
         $this->encrypter = $encrypter;
