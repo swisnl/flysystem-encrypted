@@ -6,6 +6,14 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ## [Unreleased]
 
+- Nothing.
+
+## [2.2.0] - 2024-10-24
+
+### Added
+
+- Added support for Laravel 11.
+
 ### Removed
 
 - Dropped PHP <8.0 support.
